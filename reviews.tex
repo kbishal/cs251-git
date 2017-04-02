@@ -8,71 +8,8 @@
 \date{}
 \begin{document}
 \maketitle
-
-Merge sort\cite{Mergesort} is based on the divide-and-conquer paradigm. Now we give the algorithm to solve the subproblem of sorting $A[p$ .. $r]$. Initially, $p = 1$ and $r = n$, but these values change as we recurse through subproblems.
-
-To sort $A[p$ .. $r]$:
-\begin{enumerate}
-\item{ Divide Step\\If a given array $A$ has zero element, simply return; it is already sorted. Otherwise, split $A[p$ .. $r]$ into two subarrays $A[p$ .. $q]$ and $A[q + 1$ .. $r]$, each containing about half of the elements of $A[p$ .. $r]$.}
-\item{Conquer Step\\
-Conquer by recursively sorting the two subarrays $A[p$ .. $q]$ and $A[q + 1$ .. $r]$.}
-\item{Combine Step
-
-Combine the elements back in $A[p$ .. $r]$ by merging the two sorted subarrays $A[p$ .. $q]$ and $A[q + 1$ .. $r]$ into a sorted sequence. To accomplish this step, we will define a procedure \textsc{Merge} $(A, p, q, r)$.}
-\end{enumerate}
-
-Here I give the psedocode for the Merge Sort Algorithm\\
-\begin{algorithm}[H]
-\DontPrintSemicolon
-\SetKwFunction{FMergeSort}{MergeSort}\SetKwFunction{FMerge}{Merge}
-  \SetKwProg{Fn}{Function}{:}{}
-  \Fn{\FMergeSort{$A$, $p$, $r$}}{
-        \If{$p < r$}{
-        	$q \gets (p + r)/2$\;
-        	\FMergeSort{A,p,q}\;
-        	\FMergeSort{A,q+1,r}\;
-        	\FMerge{A,p,q,r}\;
-        }
-  }
-  \;
-  \SetKwProg{Fn}{Function}{:}{}
-  \Fn{\FMerge{$A$, $p$, $q$, $r$}}{
-  		$n1 \gets q - p + 1$\;
-  		$n2 \gets r - q$\;
-  		let $L[1..n_1 + 1]$ and $R[1..n_2 + 1]$ be new arrays\;
-  		\For{$i = 1$ \emph{\KwTo} $n_1$}{
-  			$L[i] = A[p + i - 1]$
-  		}
-  		\For{$j = 1$  \emph{\KwTo}  $n_2$}{
-		 	 $R[j] = A[q + j]$
-		}
-  		$L[n_1 + 1] = \infty$\;
-  		$R[n_2 + 1] = \infty$\;
-  		$i = 1$\;
-  		$j = 1$\;
-  		\For{$k = p$ \emph{\KwTo} $r$}{
-			\If{$L[i] \leq R[j]$}{
-        		$A[k] \gets L[i]$\;
-        		$i = i + 1$
-       	 }
-        	\Else{
-        		$A[k] = R[j]$\;
-        		$j = j + 1$\;
-       	 }
-		}
-  	}
-\caption{MERGESORT\label{MS}}
-
-\end{algorithm}
-\pagebreak
-\section*{Running Time Analysis}
-\begin{itemize}
-\item{
-\[ T(n) = 2T(n/2) + O(n)\]}
-or, \[T(n) = O(nlog(n))\]
+\section*{Movie: GADAR}
+ The issue the story tries to tackle is essential because from a historical standpoint, this really happened. The performance by Sunny Deol, Amisha Patel, and Amrish Puri is applaudable.
+The film deserves the accolades it earned. The director Anil Sharma did a great job in creating different moods at appropriate times in the movie. I recommend it to everybody. 
 \end{itemize}
-
-\medskip
-\bibliographystyle{unsrt}
-\bibliography{mergesort}
 \end{document}
